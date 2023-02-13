@@ -1,4 +1,5 @@
-# TABLE 1 BIS --> Descriptive analysis of data WITH MORE LGE
+# TABLE 1 BIS --> Descriptive analysis of data WITH MORE LGE 
+# TEST TEST
 setwd("/Users/alexandreunger/R")
 library(readxl) # pour importer le document
 library(compareGroups)
