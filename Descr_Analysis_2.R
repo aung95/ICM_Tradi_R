@@ -28,6 +28,7 @@ NYHA_descr = createTable(
   show.all=T, show.p.overall = T)
 CardiacRythm_descr = createTable(
   compareGroups(LGE_Nb_Segment ~ SinusRythm, data=df2, method = NA), 
+  hide = c(SinusRythm="0"),
   show.all=T, show.p.overall = T)
 MRIParam_descr = createTable(
   compareGroups(LGE_Nb_Segment ~ LVEF + LVEDiastV + LVESystV + LVMass + RVDysf, data=df2, method = NA), 

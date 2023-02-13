@@ -51,7 +51,7 @@ LocationLGE_descr = createTable(
   hide = c(LGE_Anterior="0",LGE_Septal = "0", LGE_Inferior ="0", LGE_Lateral ="0", LGE_Apical ="0"),
   show.all=T, show.p.overall = T)
 NumberSegmLGE_descr  = createTable(
-  compareGroups(LGE_Presence ~ LGE_Mean_of_segments, data=df2, method = 1), 
+  compareGroups(LGE_Presence ~ LGE_Mean_of_segments, data=df2, method = NA), 
   show.all=T, show.p.overall = T) # forced to consider as normal
 
 table_results <- rbind(

@@ -207,6 +207,7 @@ label(df2$LGE_Mean_of_segments) <- c("Number of segments of ischemic LGE (Mean a
 # ------------------ export new report for df2 ----
 dir.create("./results/ICM_results")
 dir.create("./results/ICM_results/Descriptive_ICM")
+describe(df2)
 plot(describe(df2)) # export ces files 
 # write continuous variable
 write.table(round(describeBy(df2[,c("Age","BMI","LVEF","LVEDiastV","LVESystV","LVMass","LGE_Mean_of_segments")]),2), file = "/Users/alexandreunger/R/results/ICM_results/Descriptive_ICM/describe_continuous_variable_df2.csv", sep=",")
