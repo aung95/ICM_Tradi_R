@@ -15,6 +15,7 @@ df2 <- data.frame(df1$`N° Patients`) # create the first line
 colnames(df2) <- c("NumPatient") # put a name
 label(df2$NumPatient)<- c("Numéro des patients")
 # ------------ DATA MANAGEMENT  ---------------------- NB : Check à q fois si data are missing !!!
+
 # ---------- OUTCOMES ----
 # Table 1 / LGE vs No LGE ... (variable to divide patients)
 df2$LGE_Presence <- as.factor(df1$`Presence of any pattern of LGE ischemic or mid-wall (0= No; 1=Yes)`)# on voit que c'est un integer et il faut transformer en categorical variables avec as.factor
@@ -28,9 +29,13 @@ df2$LGE_Nb_Segment<- ifelse(df2$LGE_Nb_Segment == 0, "NoLGE",
 df2$LGE_Nb_Segment <- factor(df2$LGE_Nb_Segment, levels = c("NoLGE","1_2LGE","3_5LGE","6_moreLGE"))
 label(df2$LGE_Presence) <- c("Number of segments of ischemic LGE AND midwall LGE")
 # Table 1 ter / Baseline and CMR Characteristics of the Study stratified by death or not (N=X)
-df2$death <- factor(df1$`Death (0=No; 1=Yes)`)
-levels(df2$death) <- c("Alive", "Death")
+df2$death <- df1$`Death (0=No; 1=Yes)`
 label(df2$death) <- c("df1$`Death (0=No; 1=Yes)`)")
+
+# Survival analysis 
+df2$FUtime <- df1$`Délai du suivi avant la mort ou dernier contact vivant (months)`
+label(df2$death) <- c("Délai du suivi avant la mort ou dernier contact vivant (months)")
+
 # ------- PREDICTORS -----
 # 1. Age 
 df2$Age <- df1$`Age at baseline (years)` # on sauve la nouvelle variable 

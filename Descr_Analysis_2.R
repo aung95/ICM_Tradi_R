@@ -51,7 +51,6 @@ LocationLGE_descr = createTable(
   hide = c(LGE_Anterior="0",LGE_Septal = "0", LGE_Inferior ="0", LGE_Lateral ="0", LGE_Apical ="0"),
   show.all=T, show.p.overall = T)
 
-help("compareGroups")
 table_results <- rbind(
   "General Description"=General_descr, 
   "Coronary risk factors" = CoronaryRiskFactor_descr,

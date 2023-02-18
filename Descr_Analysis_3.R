@@ -10,6 +10,9 @@ library(psych) # to use descrbeBy
 load("donnees/Data_ICM_managed.RData")
 
 ###----- # DESCRIBE BY SUBGROUPS
+df2$death <- factor(df2$death) # made as factor death 
+levels(df2$death) <- c("Alive", "Death")
+# ---
 General_descr = createTable(
   compareGroups(death ~ Age + Genre + BMI , data=df2, method = NA), hide = c(Genre="0"), show.all=T, show.p.overall = T)
 CoronaryRiskFactor_descr = createTable(
